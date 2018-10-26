@@ -18,7 +18,7 @@ YUVReader::~YUVReader()
 {
 }
 
-cv::Mat YUVReader::readFrame(ui idx)
+cv::Mat YUVReader::readFrameYUV(ui idx)
 {
   ui offset = idx * height * width * 3 / 2;
   ui pixelNum = height * width * 3 / 2;
@@ -59,7 +59,18 @@ cv::Mat YUVReader::readFrame(ui idx)
       ret.at<cv::Vec3b>(2 * i + 1, 2 * j + 1)[2] = tmp[i * sub_width + j];
     }
   }
-  cv::cvtColor(ret, ret, CV_YCrCb2RGB);
+  //cv::cvtColor(ret, ret, CV_YCrCb2RGB);
   delete[] buf;
   return ret;
+}
+cv::Mat YUVReader::readFrameRGB(ui idx)
+{
+  cv::Mat ret(height, width, CV_8UC3);
+  ret = readFrameYUV(idx);
+  cvtColor(ret, ret, CV_YUV2RGB);
+  return ret;
+}
+string YUVReader::getFileName()
+{
+  return fileName;
 }

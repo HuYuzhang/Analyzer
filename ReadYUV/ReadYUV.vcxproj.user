@@ -3,5 +3,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LocalDebuggerCommandArguments>C:\huyuzhang\raw_data\timg.jpg</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\..\huyuzhang\run</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
 </Project>

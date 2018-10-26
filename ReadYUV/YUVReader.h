@@ -12,6 +12,8 @@ private:
 public:
   YUVReader(string s, ui h, ui w);
   ~YUVReader();
-  cv::Mat readFrame(ui idx);
+  cv::Mat readFrameYUV(ui idx);
+  cv::Mat readFrameRGB(ui idx);
+  string getFileName();
 };
 

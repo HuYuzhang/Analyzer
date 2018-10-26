@@ -68,11 +68,13 @@
   <ItemGroup>
     <ClInclude Include="def.h" />
     <ClInclude Include="EdgeDrawer.h" />
+    <ClInclude Include="Spliter.h" />
     <ClInclude Include="YUVReader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EdgeDrawer.cpp" />
     <ClCompile Include="encmain.cpp" />
+    <ClCompile Include="Spliter.cpp" />
     <ClCompile Include="YUVReader.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
