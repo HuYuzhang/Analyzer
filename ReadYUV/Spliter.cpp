@@ -20,6 +20,9 @@ dstDir：存储处理结果的路径位置（暂时咱先手动建立一下，打算是一帧先对应于一个目录
 
 void Spliter::doSplitYUV(string predDirectionFile, string dstDir)
 {
+  ui planarCnt = 0;
+  ui dcCnt = 0;
+  ui angleCnt = 0;
   ifstream fin = ifstream(predDirectionFile);
   if (!fin)
   {
@@ -29,6 +32,9 @@ void Spliter::doSplitYUV(string predDirectionFile, string dstDir)
 
   ui frame_id, pelX, pelY, predMode;
   string dstName;
+  string planar = "planar\\";
+  string dc = "dc\\";
+  string angle = "angle\\";
   const ui blockEachFrame = (1792 / 32) * (1024 / 32);
   //对于每一帧进行数据处理
   for (ui f = 0; f < frameNumber; ++f)
@@ -61,14 +67,32 @@ void Spliter::doSplitYUV(string predDirectionFile, string dstDir)
           }
         }
         dstName = to_string(f) + "_" + to_string(pelX) + "_" + to_string(pelY) + "_" + to_string(predMode) + ".jpg";
-        imwrite(dstDir + dstName, tmp);
+        if (predMode == 0)
+        {
+          ++planarCnt;
+          imwrite(dstDir + planar + dstName, tmp);
+        }
+        else if (predMode == 1)
+        {
+          ++dcCnt;
+          imwrite(dstDir + dc + dstName, tmp);
+        }
+        else
+        {
+          ++angleCnt;
+          imwrite(dstDir + angle + dstName, tmp);
+        }
       }
       if (blockCnt == blockEachFrame)
       {
         break;//完成了对于当前帧所有CU信息的读取
       }
     }
+    cout << "Frame: " << f << " finished" << endl;
   }
+  cout << "----------------------------------------------" << endl;
+  cout << "Totally, we have PLANAR: " << planarCnt << ", DC: " << dcCnt << ", Angle: " << angleCnt << endl;
+  cout << "----------------------------------------------" << endl << endl;
 }
 
 
