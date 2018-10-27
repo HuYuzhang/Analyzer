@@ -26,7 +26,8 @@ cv::Mat YUVReader::readFrameYUV(ui idx)
   cv::Mat ret(height, width, CV_8UC3);
   uc* buf = new uc[pixelNum];
   uc* tmp = buf;
-  fin.get((char*)buf, pixelNum);
+  fin.read((char *)buf, pixelNum);
+  //cout << fin.gcount();
   ui sub_height = height >> 1;
   ui sub_width = width >> 1;
 
