@@ -4,6 +4,6 @@
     <LocalDebuggerCommandArguments>
     </LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\..\huyuzhang\run</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>..\..\run</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
 </Project>

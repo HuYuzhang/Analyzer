@@ -4,12 +4,15 @@
 #include "Spliter.h"
 int main(int argc, char** argv)
 {
-  string GT = "video.yuv";
+    string GT = "video.yuv";
+    YUVReader reader(GT, 1024, 1792);
+    Mat img = reader.readFrameYUV(0);
+  /*string GT = "video.yuv";
   string dec = "dec.yuv";
   string dirFile = "dump_dir.txt";
   string dstDir = "data\\";
   Spliter sp(GT, dec, 1024, 1792, 702);
-  sp.doSplitYUV(dirFile, dstDir);
+  sp.doSplitYUV(dirFile, dstDir);*/
   /*YUVReader ori("video.yuv", 1024, 1792);
   YUVReader rec("rec.yuv", 1024, 1792);
   for (ui i = 0; i < 702; ++i)
