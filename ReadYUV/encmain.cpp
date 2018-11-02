@@ -2,11 +2,19 @@
 #include "YUVReader.h"
 #include "EdgeDrawer.h"
 #include "Spliter.h"
+#include "CaffeApplyer.h"
 int main(int argc, char** argv)
 {
-    string GT = "video.yuv";
+    string modelFile = "angle.caffemodel";
+    string deployFile = "deploy.prototxt";
+    string imgPath = "img.jpg";
+    CaffeApplyer app(deployFile, modelFile);
+    Mat img = imread(imgPath);
+    img.convertTo(img, CV_8UC1);
+    Mat ret = app.run_Filter(img);
+    /*string GT = "video.yuv";
     YUVReader reader(GT, 1024, 1792);
-    Mat img = reader.readFrameYUV(0);
+    Mat img = reader.readFrameYUV(0);*/
   /*string GT = "video.yuv";
   string dec = "dec.yuv";
   string dirFile = "dump_dir.txt";

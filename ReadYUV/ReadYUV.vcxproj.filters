@@ -27,6 +27,12 @@
     <ClInclude Include="Spliter.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CaffeApplyer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="caffe_head.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="YUVReader.cpp">
@@ -39,6 +45,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Spliter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CaffeApplyer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

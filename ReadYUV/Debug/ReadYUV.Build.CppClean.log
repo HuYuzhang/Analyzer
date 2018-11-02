@@ -4,9 +4,7 @@ c:\lab\intra\analyzer\readyuv\debug\edgedrawer.obj
 c:\lab\intra\analyzer\readyuv\debug\encmain.obj
 c:\lab\intra\analyzer\readyuv\debug\spliter.obj
 c:\lab\intra\analyzer\readyuv\debug\yuvreader.obj
-c:\lab\intra\analyzer\debug\readyuv.ilk
-c:\lab\intra\analyzer\debug\readyuv.exe
-c:\lab\intra\analyzer\debug\readyuv.pdb
+c:\lab\intra\analyzer\readyuv\debug\caffeapplyer.obj
 c:\lab\intra\analyzer\readyuv\debug\readyuv.tlog\cl.command.1.tlog
 c:\lab\intra\analyzer\readyuv\debug\readyuv.tlog\cl.read.1.tlog
 c:\lab\intra\analyzer\readyuv\debug\readyuv.tlog\cl.write.1.tlog
